@@ -1,24 +1,27 @@
 a:link {
             color:rebeccapurple;
-        }
-        a:hover {
+}
+a:hover {
             text-decoration: none;
             color: darkorchid;
-        }
-        a:visited, a:active {
+}
+a:visited,  a:active {
             color:rebeccapurple;
-        }
-        .command {
+}
+.command {
             color:blueviolet;
             font-family: courier;
             font-size: 12pt;
             border: 1px solid white;
-        }
-        .tool {
+}
+.tool {
             height: 20px;
             position: relative;
             top: -3px;
-        }
-        .container {
+}
+.container {
             max-width: 1000px;
-        }
+}
+.ss {
+            width: 95%;
+            max-width: 500px
