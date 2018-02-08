@@ -25,7 +25,7 @@ a:visited,  a:active {
 .ss {
             width: 100%;
             max-width: 500px;
-            margin: 10px 10px 60px 10px;
+            margin: 10px 0px 60px 0px;
             border: 10px solid white;
             box-shadow:2px 2px lightgray;
             
