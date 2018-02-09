@@ -1,4 +1,4 @@
-/* a:link {
+a:link {
             color:rebeccapurple;
 }
 a:hover {
@@ -27,12 +27,28 @@ a:visited,  a:active {
 .ss {
             width: 100%;
             max-width: 500px;
-            margin: 10px 0px 60px 0px;
+            margin: 10px 0px 50px 0px;
             border: 10px solid white;
             box-shadow:2px 2px lightgray;
             
 }
 
-#purpose {
-            border:2px solid blueviolet;     
+.step {
+            background: #f0f0f0;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+            padding: 0px 20px;
+            margin: 20px 0px;
+            width: 100%;
+}
+.in-out {
+            background: #f0f0f0;
+            border-radius: 5px;
+            border:2px solid blueviolet;
+            padding: 0px 20px;
+            margin: 20px 0px;
+            width: 100%;
+}
+.step h3 {
+            color: #4f0680;
 }
