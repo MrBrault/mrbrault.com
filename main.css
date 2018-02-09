@@ -57,3 +57,12 @@ a:visited,  a:active {
 .step h3,.in-out h3 {
             color: #4f0680;
 }
+
+ul {
+            list-style-image: url('http://mrbrault.com/ps/tools/check2.png');
+            margin-left: 20px;
+}
+    
+li {
+             margin: 2px;
+}
