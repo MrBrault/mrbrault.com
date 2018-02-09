@@ -1,4 +1,4 @@
-a:link {
+/* a:link {
             color:rebeccapurple;
 }
 a:hover {
@@ -19,6 +19,8 @@ a:visited,  a:active {
             position: relative;
             top: -3px;
 }
+
+*/
 .container {
             max-width: 1000px;
 }
