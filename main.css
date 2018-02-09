@@ -1,19 +1,23 @@
 a:link {
             color:rebeccapurple;
 }
+
 a:hover {
             text-decoration: none;
             color: darkorchid;
 }
+
 a:visited,  a:active {
             color:rebeccapurple;
 }
+
 .command {
             color:blueviolet;
             font-family: courier;
             font-size: 12pt;
             border: 1px solid white;
 }
+
 .tool {
             height: 20px;
             position: relative;
@@ -23,13 +27,13 @@ a:visited,  a:active {
 .container {
             max-width: 1000px;
 }
+
 .ss {
             width: 100%;
             max-width: 500px;
             margin: 10px 0px 50px 0px;
             border: 10px solid white;
             box-shadow:2px 2px lightgray;
-            
 }
 
 .step {
@@ -40,6 +44,7 @@ a:visited,  a:active {
             margin: 20px 0px;
             width: 100%;
 }
+
 .in-out {
             background: #f0f0f0;
             border-radius: 5px;
@@ -48,6 +53,7 @@ a:visited,  a:active {
             margin: 20px 0px;
             width: 100%;
 }
+
 .step h3 {
             color: #4f0680;
 }
