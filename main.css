@@ -32,6 +32,5 @@ a:visited,  a:active {
 }
 
 #purpose {
-            broder:2px solid purple;
-            
+            border:2px solid blueviolet;     
 }
