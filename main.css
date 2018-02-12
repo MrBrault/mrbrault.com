@@ -59,7 +59,7 @@ a:visited,  a:active {
 }
 
 ul {
-            list-style-image: url('http://mrbrault.com/ps/tools/check-3.png');
+            list-style-image: url("http://mrbrault.com/ps/tools/check-3.png");
             margin-left: 15px;
 }
     
