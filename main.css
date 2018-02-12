@@ -66,3 +66,9 @@ ul {
 li {
              margin: 2px;
 }
+.student {
+            width: 30%;
+            margin: auto;
+            border: 10px solid white;
+            box-shadow:2px 2px lightgray;
+}
