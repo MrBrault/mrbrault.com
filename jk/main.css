@@ -17,7 +17,7 @@
 }
 .top {
     margin-top: -50px;
-    color:yellow
+    color:orange
 }
 .content p {
     font-style: italic;
@@ -101,13 +101,13 @@ a:active, a:hover, a:link, a:visited{
     min-height: 100%;
     width: auto;
     height: auto;
-    background: url(wed-head.png) no-repeat;
+    background: url('wed-head.png') no-repeat;
     background-size:cover;
     }
 }
 @media screen and (max-device-width: 768px) {
     #hero {
-        background: url(wed-head.png) no-repeat;
+        background: url('wed-head.png') no-repeat;
         background-size: cover;
     }
     #bgvideo {
