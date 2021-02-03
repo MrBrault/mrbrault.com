@@ -1,0 +1,91 @@
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: static;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+/* Add some content at the bottom of the video/page */
+.content {
+  position: relative;
+  bottom: 300px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  text-align:center;
+}
+.top {
+    margin-top: -50px
+}
+.content p {
+    font-style: italic;
+    font-family: georgia;
+}
+.content h1 {
+    font-family: tahoma;
+}
+h2.main {
+    font-style: italic;
+    font-family: georgia;
+    text-align: center;
+}
+h4.main {
+    font-family: garamound;
+    text-align: center;
+}
+p.main {
+    font-family: garamound;
+    text-align: center;
+    font-size: 115%;
+    max-width: 600px;
+    margin:auto;
+}
+.link{
+    color: #579791;
+    text-decoration:none;
+}
+a:active, a:hover, a:link, a:visited{
+    color: #579791;
+    text-decoration:none;
+}
+
+.video {
+    max-width: 600px;
+    margin:auto
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 55.5%; /* 16:9 Aspect Ratio */ 
+    margin:auto;
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin:0 auto;
+}
+.col-sm-6 h3 {
+    text-align: center;    
+}
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #666;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+/*.container-fluid {
+    color:white;
+    background: rgba(255, 255, 255, 0.5);
+} */
