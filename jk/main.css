@@ -85,7 +85,10 @@ a:active, a:hover, a:link, a:visited{
   text-align: center;
   padding: 25px;
 }
-/*.container-fluid {
-    color:white;
-    background: rgba(255, 255, 255, 0.5);
-} */
+video {
+    background-image: url('wed-head.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-position: center; 
+}
