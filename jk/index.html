@@ -11,7 +11,45 @@
     <!-- my css -->
     <link rel="stylesheet" href="main.css"> 
     
-    
+    <script type="text/javascript">
+      $(window).bind("load", function() {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        } else {
+          var banner = $('#pageWrapper img').first();
+          if (banner.length === 0)
+            banner = $('.banner-thumbnail-wrapper > #thumbnail > img').first();
+          if (banner.length === 0)
+            banner = $('#parallax-images img').first();
+          if (banner.length === 0)
+            banner = $('.has-main-image img').first();
+          if (banner.length === 0)
+              banner = $('#page-thumb img').first();
+          var url = "https://jkpro.squarespace.com/s/johnston-sde.m4v";
+          banner.hide();
+          $('<video class="bannerVideo" autoplay="" loop="" preload><source src="' + url + '" type="video/mp4"></video>').insertAfter(banner);
+          adjustBanner($('.bannerVideo'), banner);
+          setTimeout(function() {
+            adjustBanner($('.bannerVideo'), banner);
+          }, 2000);
+          $(window, banner).resize(function() {
+            adjustBanner($('.bannerVideo'), banner);
+            setTimeout(function() {
+              adjustBanner($('.bannerVideo'), banner);
+            }, 200);
+          });
+        }
+        function adjustBanner (video, banner) {
+          video.css({
+            height: banner.css('height'),
+            width: banner.css('width'),
+            top: banner.css('top'),
+            left: banner.css('left'),
+            position: 'relative',
+            'object-fit': 'inherit'
+          });
+        }
+      });
+    </script>
 </head>
 <body>
     
@@ -37,16 +75,27 @@
 </nav>
 <!-- The video -->
 
-<video autoplay muted loop playsinline id="myVideo" poster="wed-head.png">
+<!--<video autoplay muted loop playsinline id="myVideo" poster="wed-head.png">
   <source src="johnston-sde.m4v" type="video/mp4">
+</video> -->
+    
+    <div id="hero">
+<video playsinline autoplay muted loop poster="wed-head.png" id="bgvideo" width="x" height="y">
+<source src="johnston-sde.m4v" type="video/mp4">
 </video>
+</div>
 
-<!-- Optional: some overlay text to describe the video -->
+
 <div class="content">
   <p>Only video can capture the</p>
-    <h1>FULL !!EMOTION</h1>
+    <h1>FULL EMOTION</h1>
   <p>of the moment</p>
 </div>
+    
+    
+    
+    
+    
 <div class="container">
     <h2 class="main top">We capture memorable moments and make them unforgettable.</h2>
     <br>

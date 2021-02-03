@@ -4,8 +4,6 @@
   right: 0;
   bottom: 0;
   min-width: 100%; 
-  min-height: 100%;
-  max-width: 100%;
 }
 /* Add some content at the bottom of the video/page */
 .content {
@@ -19,7 +17,7 @@
 }
 .top {
     margin-top: -50px;
-    color:red
+    color:yellow
 }
 .content p {
     font-style: italic;
@@ -88,9 +86,31 @@ a:active, a:hover, a:link, a:visited{
   padding: 25px;
 }
 /*video {
-    background-image: url('wed-head.png');
+    background-: url('wed-head.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
     background-position: center; 
 }*/
+
+@media screen and (min-device-width: 768px) {video#bgvideo {
+    position: relative;
+    top: 45px;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background: url(wed-head.png) no-repeat;
+    background-size:cover;
+    }
+}
+@media screen and (max-device-width: 768px) {
+    #hero {
+        background: url(wed-head.png) no-repeat;
+        background-size: cover;
+    }
+    #bgvideo {
+        display: none;
+    }
+}
