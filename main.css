@@ -91,3 +91,9 @@ li {
     height: 100%;
     border: none;
     margin:0 auto;
+}
+
+.profile {
+    width:75%;
+    margin-bottom: 25px;
+}
