@@ -1,0 +1,80 @@
+a:link {
+            color:#0E2B4A;
+}
+
+a:hover {
+            text-decoration: none;
+            color: #0E2B4A;
+}
+
+a:visited,  a:active {
+            color:#0E2B4A;
+}
+
+.command {
+            color:blueviolet;
+            font-family: courier;
+            font-size: 12pt;
+            border: 1px solid white;
+}
+
+.tool {
+            height: 20px;
+            position: relative;
+            top: -3px;
+}
+
+.container {
+            max-width: 1000px;
+}
+
+.ss {
+            width: 100%;
+            max-width: 500px;
+            margin: 10px 0px 50px 0px;
+            border: 10px solid white;
+            box-shadow:2px 2px lightgray;
+}
+
+.step {
+            background: #f0f0f0;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+            padding: 0px 20px;
+            margin: 20px 0px;
+            width: 100%;
+}
+
+.in-out {
+            background: #f0f0f0;
+            border-radius: 5px;
+            border:2px solid #0E2B4A;
+            padding: 0px 20px;
+            margin: 20px 0px;
+            width: 100%;
+}
+
+.step h3,.in-out h3 {
+            color: #0E2B4A;
+}
+
+ul {
+            /*list-style-image: url("http://mrbrault.com/ps/tools/check-3.png");*/
+            margin-left: 15px;
+}
+    
+li {
+             margin: 2px;
+}
+.student {
+            width: 30%;
+            margin: 1.2%;
+            border: 10px solid white;
+            box-shadow:2px 2px lightgray;
+}
+.col-sm-4 h3 {
+            text-align: center;
+}
+nav {
+    background-color:rgba(240, 240, 240, 0.85);
+}
