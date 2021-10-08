@@ -1,0 +1,581 @@
+<script type="text/javascript" src="scripts/raphael.2.1.2.js"></script>
+<script type="text/javascript" src="scripts/jquery.2.0.3.min.js"></script>
+<script type="text/javascript" src="scripts/lz-string-1.3.3.js"></script>
+<script type="text/javascript" src="scripts/general.js"></script>
+<script type="text/javascript" src="scripts/default-variables.js"></script>
+
+
+
+
+<script type="text/javascript" src="scripts/controls/controls.js"></script>
+<script type="text/javascript" src="scripts/controls/add-node.js"></script>
+<script type="text/javascript" src="scripts/controls/add-line.js"></script>
+<script type="text/javascript" src="scripts/controls/add-circle.js"></script>
+<script type="text/javascript" src="scripts/controls/add-arc.js"></script>
+<script type="text/javascript" src="scripts/controls/delete-node.js"></script>
+<script type="text/javascript" src="scripts/controls/delete-line.js"></script>
+<script type="text/javascript" src="scripts/controls/select-set.js"></script>
+<script type="text/javascript" src="scripts/controls/join-node.js"></script>
+<script type="text/javascript" src="scripts/controls/split-node.js"></script>
+<script type="text/javascript" src="scripts/controls/general.js"></script>
+<script type="text/javascript" src="scripts/controls/line-size.js"></script>
+<script type="text/javascript" src="scripts/controls/line-color.js"></script>
+<script type="text/javascript" src="scripts/controls/move.js"></script>
+<script type="text/javascript" src="scripts/controls/show-hide.js"></script>
+<script type="text/javascript" src="scripts/controls/shrink-grow.js"></script>
+<script type="text/javascript" src="scripts/controls/zoom.js"></script>
+
+
+<script type="text/javascript" src="scripts/svg/canvas.js"></script>
+<script type="text/javascript" src="scripts/svg/click-node.js"></script>
+<script type="text/javascript" src="scripts/svg/move-node.js"></script>
+<script type="text/javascript" src="scripts/svg/click-line.js"></script>
+<script type="text/javascript" src="scripts/svg/move-line.js"></script>
+<script type="text/javascript" src="scripts/svg/click-circle.js"></script>
+<script type="text/javascript" src="scripts/svg/move-circle.js"></script>
+<script type="text/javascript" src="scripts/svg/click-arc.js"></script>
+<script type="text/javascript" src="scripts/svg/move-arc.js"></script>
+<script type="text/javascript" src="scripts/svg/move-set.js"></script>
+<script type="text/javascript" src="scripts/svg/rotate-set.js"></script>
+<script type="text/javascript" src="scripts/svg/general.js"></script>
+
+
+
+<script type="text/javascript" src="scripts/frames/move-frame.js"></script>
+<script type="text/javascript" src="scripts/frames/add-frame.js"></script>
+<script type="text/javascript" src="scripts/frames/delete-frame.js"></script>
+<script type="text/javascript" src="scripts/frames/draw-ghost.js"></script>
+<script type="text/javascript" src="scripts/frames/draw-full.js"></script>
+<script type="text/javascript" src="scripts/frames/options.js"></script>
+<script type="text/javascript" src="scripts/frames/scroll.js"></script>
+
+
+
+<script type="text/javascript" src="scripts/canvas/datatocanvas.js"></script>
+
+
+
+<script type="text/javascript" src="scripts/gif/LZWEncoder.js"></script>
+<script type="text/javascript" src="scripts/gif/NeuQuant.js"></script>
+<script type="text/javascript" src="scripts/gif/GIFEncoder.js"></script>
+<script type="text/javascript" src="scripts/gif/b64.js"></script>
+<script type="text/javascript" src="scripts/gif/svgtogif.js"></script>
+<script type="text/javascript" src="scripts/gif/intermediate.js"></script>
+<script type="text/javascript" src="scripts/gif/play-local.js"></script>
+<script type="text/javascript" src="scripts/gif/local-controls.js"></script>
+
+
+<script type="text/javascript" src="scripts/file/save.js"></script>
+<script type="text/javascript" src="scripts/file/open.js"></script>
+<script type="text/javascript" src="scripts/file/options.js"></script>
+<script type="text/javascript" src="scripts/file/help.js"></script>
+
+
+
+
+
+<link rel='stylesheet' href='css/global.css' />
+
+
+
+
+<meta name="viewport" content="initial-scale = 1.0">
+
+
+
+<body>
+
+
+<div id='all-container'>
+
+<table>
+	<tr>
+		<td class='options-left'>
+			<button id='node-button' class='control-button optional' onclick='add_node();'><img src="icons/node.jpg"></button>
+			<button id='line-button' class='control-button optional' onclick='add_line();'><img src="icons/line.jpg"></button>
+			<button id='arc-button' class='control-button optional' onclick='add_arc();'><img src="icons/arc.jpg"></button>
+			<button id='circle-button' class='control-button optional' onclick='add_circle();'><img src="icons/circle.jpg"></button>
+			
+			<button id='multi-button' class='control-button optional' onclick='multi_select();'><img src="icons/multi.jpg"></button>
+			<button id='join-button' class='control-button optional' onclick='join_nodes();'><img src="icons/join.jpg"></button>
+			<button id='split-button' class='control-button optional' onclick='split_node();'><img src="icons/split.jpg"></button>
+			<button id='move-node-menu-button' class='control-button optional' onclick='move_node_menu();'><img src="icons/move-node.jpg"></button>
+			
+			<button id='vert-button' class='control-button optional' onclick='line_vert();'><img src="icons/vert.jpg"></button>
+			<button id='horz-button' class='control-button optional' onclick='line_horz();'><img src="icons/horz.jpg"></button>	
+			<button id='move-line-menu-button' class='control-button optional' onclick='move_line_menu();'><img src="icons/move-line.jpg"></button>
+			<button id='set-button' class='control-button optional' onclick='select_line_set();'><img src="icons/set.jpg"></button>
+			
+			<button id='move-set-menu-button' class='control-button optional' onclick='move_set_menu();'><img src="icons/move-set.jpg"></button>
+			<button id='rot-set-menu-button' class='control-button optional' onclick='rotate_set_menu();'><img src="icons/rot.jpg"></button>
+			<button id='shrink-grow-set-menu-button' class='control-button optional' onclick='shrink_grow_set_menu();'><img src="icons/shrink-grow.jpg"></button>
+
+			<button id='color-button' class='control-button optional' onclick='line_color_menu();'><img src="icons/color.jpg"></button>
+			<button id='line-size-menu-button' class='control-button optional' onclick='line_size_menu();'><img src="icons/linesize.jpg"></button>
+			<button id='delete-button' class='control-button optional' onclick='delete_element();'><img src="icons/delete.jpg"></button>
+			
+			<button id='show-hide-elements-button' class='control-button optional' onclick='show_hide_elements();'><img src="icons/show-full.jpg"></button>
+			<button id='grid-button' class='control-button optional' onclick='show_hide_grid();'><img src="icons/grid-half.jpg"></button>
+			<button id='zoomin-button' class='control-button optional' onclick="zoom('in');"><img src="icons/zoomin.jpg"></button>
+			<button id='zoomout-button' class='control-button optional' onclick="zoom('out');"><img src="icons/zoomout.jpg"></button>
+			
+		</td>
+		<td class='options-right'>
+			<button id='open-button' class='control-button' onclick='open_menu();'><img src="icons/open.jpg"></button>
+			<button id='save-button' class='control-button' onclick='save_menu()'><img src="icons/save.jpg"></button>
+			<button id='options-button' class='control-button' onclick='global_options();'><img src="icons/options.jpg"></button>
+			<button id='play-local-button' class='control-button' onclick='play_local();'><img src="icons/play.jpg"></button>
+			<button id='help-button' class='control-button' onclick='show_help();'><img src="icons/help.jpg"></button>	
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<div class='sub-group-top'>
+				<button id='move-left-button' class='control-button optional' onclick="move_button('left');"><img src="icons/left.jpg"></button>
+				<button id='move-up-button' class='control-button optional' onclick="move_button('up');"><img src="icons/up.jpg"></button>
+				<button id='move-down-button' class='control-button optional' onclick="move_button('down');"><img src="icons/down.jpg"></button>
+				<button id='move-right-button' class='control-button optional' onclick="move_button('right');"><img src="icons/right.jpg"></button>
+				
+				<button id='grow-set-button' class='control-button optional' onclick="grow_set(+1);"><img src="icons/grow.jpg"></button>
+				<button id='shrink-set-button' class='control-button optional' onclick="grow_set(-1);"><img src="icons/shrink.jpg"></button>
+				
+				<button id='rot-pos-button' class='control-button optional' onclick='rotate_set(1);'><img src="icons/rotpos.jpg"></button>
+				<button id='rot-neg-button' class='control-button optional' onclick='rotate_set(-1);'><img src="icons/rotneg.jpg"></button>
+				
+				<button id='moveby-1-button' class='control-button optional' onclick='moveby(1);'><img src="icons/1.jpg"></button>
+				<button id='moveby-10-button' class='control-button optional control-button-active' onclick='moveby(10);'><img src="icons/10.jpg"></button>
+				<button id='moveby-45-button' class='control-button optional' onclick='moveby(45);'><img src="icons/45.jpg"></button>
+								
+				<button id='line1-button' class='control-button optional' onclick='change_line_size(1);'><img src="icons/line1.jpg"></button>
+				<button id='line2-button' class='control-button optional' onclick='change_line_size(2);'><img src="icons/line2.jpg"></button>
+				<button id='line5-button' class='control-button optional' onclick='change_line_size(5);'><img src="icons/line5.jpg"></button>
+				<button id='line10-button' class='control-button optional' onclick='change_line_size(10);'><img src="icons/line10.jpg"></button>
+				<button id='lineup-button' class='control-button optional' onclick="change_line_size('up');"><img src="icons/lineup.jpg"></button>
+				<button id='linedown-button' class='control-button optional' onclick="change_line_size('down');"><img src="icons/linedown.jpg"></button>
+				
+				<button style='background:#000' class='control-button color optional' onclick="set_color('000');"></button>
+				<button style='background:#00f' class='control-button color optional' onclick="set_color('00f');"></button>
+				<button style='background:#0f0' class='control-button color optional' onclick="set_color('0f0');"></button>
+				<button style='background:#0ff' class='control-button color optional' onclick="set_color('0ff');"></button>
+				<button style='background:#f00' class='control-button color optional' onclick="set_color('f00');"></button>
+				<button style='background:#f0f' class='control-button color optional' onclick="set_color('f0f');"></button>
+				<button style='background:#ff0' class='control-button color optional' onclick="set_color('ff0');"></button>
+				<button style='background:#fff' class='control-button color optional' onclick="set_color('fff');"></button>
+
+				
+				<button id='okmenu-button' class='control-button optional' onclick='ok_menu();'><img src="icons/ok.jpg"></button>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<div class='canvas-outer-container'>
+				<div id='canvas-container' class='canvas-container-back-grid'></div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class='frames-td'>
+			<div class='left-frame-div'>
+				<button class='control-button' onclick="scroll_frame('right');"><img src="icons/left.jpg"></button>
+			</div>
+			<div id='frames-container'>
+				<button class='frame-button current-frame' onclick='change_frame(this);'><div class='frame-button-number'></div><canvas class='frame-canvas'></canvas></button>
+			</div>
+			<div class='right-frame-div'>
+				<button class='control-button' onclick="scroll_frame('left');"><img src="icons/right.jpg"></button>
+				<button class='control-button' onclick='add_frame();'><img src="icons/add-frame.jpg"></button>
+				<button class='control-button' onclick='delete_frame_confirm();'><img src="icons/delete.jpg"></button>
+			</div>
+			<div id='debug'></div>
+		</td>
+	</tr>
+
+</table>
+
+
+	
+<div>
+	<div class='footer left'>Stickman Animation . v.1.3</div>
+	<div class='footer right'>&copy; ch33s3cak3 . 2014 . GNU</div>
+</div>
+
+
+
+
+
+<!-- canvas -->
+<div id='canvas-copy-div' class='scrim hidden'>
+	<div class='canvas-copy-container form-container'>
+		<button class='control-button pos1' onclick='close_canvas();'><img src="icons/close.jpg"></button>
+		<button class='control-button pos2' onclick='play();'><img src="icons/gif.jpg"></button>
+		<button class='control-button pos3' onclick='play_local_frames_start(local_controls[0]);'><img src="icons/play.jpg"></button>
+		<div id='play-slider'>
+			<div id='play-start-frame' class='play-indicators'>&#9658;</div>
+			<div id='play-stop-frame' class='play-indicators'>&#9668;</div>
+			<div id='play-current-frame' class='play-indicators'>&nbsp;&#9646;&nbsp;</div>
+			<div id='play-drag-frame'></div>
+		</div>
+	</div>
+</div>
+
+
+<!-- gif image -->
+<div id='gif-image-div' class='scrim hidden'>
+	<div class='gif-image-container form-container'>
+		<img id='gif-image'>
+		<button class='control-button pos1' onclick='close_gif();'><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+<!-- gif progress bar -->
+<div id='gif-creation-div' class='scrim hidden'>
+	<div class='gif-creation-container form-container'>
+		<progress id='gif-creation-progress' max='100'></progress>
+		<div id='gif-creation-value'>Frame: x of x</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- frame options -->
+<div id='frame-options-div' class='scrim hidden'>
+	<div class='frame-options-container form-container'>
+		<table class='form-table'>
+			<tr>
+				<td class='form-title' colspan=4>Frame Options</td>
+			</tr>
+			<tr>
+				<td class='form-sep1'></td><td class='form-sep2'></td><td class='form-sep1'></td><td class='form-sep1'></td>
+			</tr>
+			<tr>
+				<td class='form-left'>Intermediate steps between frames:<br>(D = global default)</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='frame-options-steps' value='3' readonly/>
+				</td>
+				<td>
+					<input type='range' id='frame-options-steps-slider' min='-1' max='5' value='3' onchange='frame_options_slider_change();'>
+				</td>
+			</tr>
+		</table>
+		<button class='control-button form-ok' onclick="close_frame_options('ok');"><img src="icons/ok.jpg"></button>
+		<button class='control-button form-cancel' onclick="close_frame_options('cancel');"><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+
+<!-- global options -->
+<div id='global-options-div' class='scrim hidden'>
+	<div class='global-options-container form-container'>
+		<table class='form-table'>
+			<tr>
+				<td class='form-title' colspan=4>Global Options</td>
+			</tr>
+			<tr>
+				<td class='form-sep1'></td><td class='form-sep2'></td><td class='form-sep1'></td><td class='form-sep1'></td>
+			</tr>
+			<tr>
+				<td class='form-left'>Default framespeed (ms):</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='global-options-fr' value='250' onkeyup='global_fr_text_change();' />
+				</td>
+				<td>
+					<input type='range' id='global-options-fr-slider' min='1' max='500' value='250' onchange='global_fr_slider_change();'>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Default intermediate steps between frames:</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='global-options-steps' value='3' readonly />
+				</td>
+				<td>
+					<input type='range' id='global-options-steps-slider' min='0' max='5' value='3' onchange='global_steps_slider_change();'>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Number of ghost images:</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='global-options-ghosts' value='3' readonly />
+				</td>
+				<td>
+					<input type='range' id='global-options-ghosts-slider' min='0' max='5' value='3' onchange='global_ghosts_slider_change();'>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Node size:</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='global-options-node-size' value='5' readonly />
+				</td>
+				<td>
+					<input type='range' id='global-options-node-size-slider' min='0' max='5' value='5' onchange='global_node_size_slider_change();'>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Scale elements on zoom:</td>
+				<td></td>
+				<td colspan=2>
+					<button id='global-zoom-yes' class='control-button save-options-button save-button-active' onclick='global_zoom(1);'><img src="icons/ok.jpg"></button>
+					<button id='global-zoom-no' class='control-button save-options-button' onclick='global_zoom(0);'><img src="icons/close.jpg"></button>
+				</td>
+			</tr>
+		</table>
+		<button class='control-button form-ok' onclick="close_global_options('ok');"><img src="icons/ok.jpg"></button>
+		<button class='control-button form-cancel' onclick="close_global_options('cancel');"><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+
+<!-- open options -->
+<div id='open-options-div' class='scrim hidden'>
+	<div class='open-options-container form-container'>
+		<table class='form-table'>
+			<tr>
+				<td class='form-title' colspan=3>Open File</td>
+			</tr>
+			<tr>
+				<td class='form-sep1'></td><td class='form-sep2'></td><td class='form-sep1'></td>
+			</tr>
+			<tr>
+				<td colspan=3 class='form-center'><button class='control-button open-options-button' onclick="open_options('local');">Local</button></td>
+			</tr>
+			<tr>
+				<td colspan=3 class='form-center'><button class='control-button open-options-button' onclick="open_options('server');">Server</button></td>
+			</tr>
+		</table>
+		<button class='control-button form-cancel' onclick="open_options('cancel');"><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+
+<!-- save options -->
+<div id='save-options-div' class='scrim hidden'>
+	<div class='save-options-container form-container'>
+		<table class='form-table'>
+			<tr>
+				<td class='form-title' colspan=3>Save File</td>
+			</tr>
+			<tr>
+				<td class='form-sep1'></td><td class='form-sep2'></td><td class='form-sep1'></td>
+			</tr>
+			<tr>
+				<td class='form-left'>Filename:</td>
+				<td></td>
+				<td>
+					<input type='textbox' id='save-options-filename' value='filename' onclick="selectText(this);"/>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Compress:</td>
+				<td></td>
+				<td>
+					<button id='save-comp-yes' class='control-button save-options-button save-button-active' onclick='save_compress(this);'><img src="icons/ok.jpg"></button>
+					<button id='save-comp-no' class='control-button save-options-button' onclick='save_compress(this);'><img src="icons/close.jpg"></button>
+				</td>
+			</tr>
+			<tr>
+				<td class='form-left'>Location:</td>
+				<td></td>
+				<td>
+					<button id='save-loc-local' class='control-button save-options-button save-button-active' onclick='save_location(this);'>Local</button>
+					<button id='save-loc-server' class='control-button save-options-button' onclick='save_location(this);'>Server</button>
+				</td>
+			</tr>
+		</table>
+		<button class='control-button form-ok' onclick="close_save_options('ok');"><img src="icons/ok.jpg"></button>
+		<button class='control-button form-cancel' onclick="close_save_options('cancel');"><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+<!-- server filelist -->
+<div id='server-filelist-div' class='scrim hidden'>
+	<div class='server-filelist-container form-container'>
+		<table class='form-table'>
+			<tr>
+				<td class='form-title' colspan=3>Open Server File</td>
+			</tr>
+			<tr>
+				<td class='form-sep1'></td><td class='form-sep2'></td><td class='form-sep1'></td>
+			</tr>
+			<tr>
+				<td class='form-center' colspan=3>
+					<div class='filelist-div'>
+						<table class='filelist-table'>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<button class='control-button form-ok' onclick="open_server_file('open');"><img src="icons/ok.jpg"></button>
+		<button class='control-button form-delete' onclick="open_server_file('delete');"><img src="icons/delete.jpg"></button>
+		<button class='control-button form-cancel' onclick="open_server_file('cancel');"><img src="icons/close.jpg"></button>
+	</div>
+</div>
+
+
+<!-- help -->
+<div id='help-div' class='scrim hidden'>
+	<div class='help-container form-container'>
+
+					<div class='help-div'>
+						<div id='help-title'>title</div>
+						<div id='help-pre-text'>pre-text</div>
+						<div id='help-pic-div'><img id='help-pic'></div>
+						<div id='help-post-text'>post-text</div>						
+					</div>
+
+		<button class='control-button help-back' onclick="help_page(-1);"><img src="icons/left.jpg"></button>
+		<button class='control-button help-forward' onclick="help_page(1);"><img src="icons/right.jpg"></button>
+		<button class='control-button help-close' onclick="help_page('close');"><img src="icons/close.jpg"></button>
+		<button class='control-button help-home' onclick="show_help();"><img src="icons/home.jpg"></button>
+		<div class='help-page'>0</div>
+	</div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- hidden file input button -->
+<input type='file' id='input_file_button' class='hidden' onchange='open_file(this);'/>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+//global variables
+
+//data
+objects = [];
+objects[0] = [];
+objects[0].options = {'steps': 'D'};
+scene = 0;
+undo = [];
+
+//element selections
+current_node = -1;
+current_line = -1;
+node_set = [];
+line_set = [];
+
+//element move/drag functions
+startX = 0;
+startY = 0;
+endX = 0;
+endY = 0;
+
+//styles
+node_edge_size = 0;			//changed to 0 because of zooming
+node_glow_edge_size = 0;	//changed to 0 because of zooming
+node_edge_color = node_color;
+node_glow_edge_color = node_glow_color;
+line_glow_size = line_size;
+
+//animation stuff
+frame_options = 0;
+total_steps = 0;
+steps_taken = 0;
+local_index = 0;
+control_stepsize = 0;
+local_controls = [0,0,0,0];	//start, stop, current, dom
+leftoffset = 0;
+currentwidth = 0;
+
+//misc
+show_state = 'full';
+
+//used in zoom function
+scale = 1;
+offsetX = 0;
+offsetY = 0;
+zoomout = [];
+
+
+
+
+
+
+//add canvas
+var canvas = $("#canvas-container");
+paper = Raphael("canvas-container", canvas.width(), canvas.height());
+
+
+//add event listener to canvas for unselect
+canvas.click(canvas_click);
+
+
+//start
+add_node();
+canvas_reset();
+
+
+//test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
