@@ -1,0 +1,584 @@
+* {
+	-webkit-user-select: none;
+}
+
+
+#all-container > table {
+	border: 2px solid #000;
+	border-collapse: collapse;
+	background: -webkit-linear-gradient(top, rgba(0,150,255,0) 0%, rgba(0,150,255,0.5) 100%);
+}
+#all-container > td {
+	border: 0px solid #ddd;
+	padding: 0px;
+}
+img {
+	height: 36px;
+}
+
+
+
+ 
+/*
+layout blocks
+*/
+
+.footer {
+	color: #ccc;
+	font-size: 10px;
+	letter-spacing: 1px;
+	
+}
+
+.footer.left {
+	float: left;
+	text-align: left;
+	padding: 0px 0px 0px 5px;
+}
+.footer.right {
+	float: right;
+	text-align: right;
+	padding: 0px 5px 0px 0px;
+}
+
+
+#all-container {
+	display: inline-block;
+	position: relative;
+}
+.options-left {
+	padding: 5px 5px 0px 5px;
+}
+.options-right {
+	text-align: right;
+	padding: 5px 5px 0px 5px;
+}
+.sub-group-top {
+	padding-left: 5px;
+	overflow: hidden;
+	-webkit-transition: ease-in-out 0.2s;
+}
+.canvas-outer-container {
+	position: relative;
+	overflow: hidden;
+	height: 385px;
+	width: 670px;
+	-webkit-transition: ease-in-out 0.2s;
+}
+#canvas-container {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	right: 15px;
+	height: 360px;
+	-webkit-box-shadow: 5px 5px 20px rgba(0,0,0,0.75);
+}
+.canvas-container-back-grid {
+	background-image: url(../icons/grid-bkgd.jpg);
+	/*background-size: 100%;*/
+	background-size: 640px;
+	background-position-x: 0px;
+	background-position-y: 0px;
+	
+}
+.canvas-container-back-none {
+	background: #fff;
+}
+
+.frames-td {
+	position: relative;
+}
+.left-frame-div {
+	position: absolute;
+	left: 5px;
+	top: 1px;
+}
+.right-frame-div {
+	position: absolute;
+	right: 5px;
+	top: 1px;
+}
+#frames-container {
+	padding: 2px 5px 5px 0px;
+	height: 46px;
+	width: 430;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-left: 60px;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+/*
+elements
+*/
+
+.hidden {
+	display: none;
+}
+
+
+.control-button {
+	background: #fff;
+	cursor: pointer;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+	padding: 1px;
+	margin: 5px;
+	outline: none;
+}
+.control-button:hover {
+	-webkit-box-shadow: 0px 0px 5px 3px #cc0;
+}
+.control-button-active {
+	-webkit-box-shadow: 0px 0px 5px 3px #cc0;
+}
+.control-button.color {
+	height: 36px;
+	width: 36px;
+}
+
+
+.frame-button {
+	position: relative;
+	cursor: pointer;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+	outline: none;
+	margin: 5px;
+	padding: 0px;
+}
+.frame-button-number {
+	position: absolute;
+	width: 100%;
+	padding-top: 3px;
+	color: rgba(0,0,0,0.5);
+	font-size: 24px;
+	font-weight: bold;
+}
+.frame-canvas {
+	height: 36px;
+	width: 64px;
+	background: #fff;
+}
+.current-frame {
+	-webkit-box-shadow: 0px 0px 5px 3px #cc0;
+}
+#frames-container img{
+	height: 24px;
+	margin-bottom: 4px;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+}
+
+
+
+
+
+
+/*
+forms (general layout)
+*/
+
+.scrim{
+	position: absolute;
+	background: rgba(0,0,0,0.55);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+.form-container {
+	position: relative;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pos1 {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 2;
+}
+.pos2 {
+	position: absolute;
+	top: 5px;
+	right: 55px;
+	z-index: 2;
+}
+.pos3 {
+	position: absolute;
+	top: 5px;
+	right: 105px;
+	z-index: 2;
+}
+
+
+
+
+
+/*
+forms (large)
+*/
+
+.canvas-copy-container{
+	width: 640px;
+	height: 400px;
+	margin-top: 60px;
+}
+.canvas-copy{
+	width: 640px;
+	height: 360px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#play-slider {
+	position: absolute;
+	background: #ddd;
+	height: 25px;
+	width: 620px;
+	bottom: 5px;
+	margin: 0px 10px;
+}
+.play-indicators {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+}
+#play-current-frame {
+	color: #ff0;
+	font-size: 30px;
+	margin-top: -5px;
+	left: 0px;
+	height: 35px;
+}
+#play-start-frame {
+	color: #0a0;
+	font-size: 22px;
+	left: 0px;
+}
+#play-stop-frame {
+	color: #f00;
+	font-size: 22px;
+	left: 0px;
+}
+#play-drag-frame {
+	position: absolute;
+	height: 100%;
+	left: 0px;
+	right: 0px;
+}
+
+
+
+.gif-image-container{
+	width: 640px;
+	height: 360px;
+	margin-top: 65px;
+}
+#gif-image{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+.gif-creation-container {
+	width: 340px;
+	height: 120px;
+	margin-top: 185px;
+	text-align: center;
+}
+#gif-creation-progress {
+	width: 250px;
+	height: 15px;
+	border: 1px solid #777777;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+#gif-creation-progress::-webkit-progress-bar { 
+	background: #fff;
+}
+#gif-creation-progress::-webkit-progress-value {
+	background: #0063a6;
+}
+
+
+
+
+/*
+forms (small)
+*/
+
+.form-table {
+	border: 0px solid #ccc;
+	width: 100%;
+	border-collapse: collapse;
+}
+.form-table  td {
+	border: 0px solid #ccc;
+	padding: 5px;
+}
+.form-title {
+	text-align: right;
+	font-size: 16px;
+	font-weight: bold;
+}
+.form-sep1 {
+	background-image: url("../icons/separator-line.jpg");
+	background-size: 100% 30px;
+	background-repeat: no-repeat;
+}
+.form-sep2 {
+	background-image: url("../icons/separator-sym1.jpg");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 20px;
+}
+.form-left {
+	text-align: right;
+}
+.form-center {
+	text-align: center;
+}
+.form-ok {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+.form-cancel {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+.frame-options-container {
+	width: 500px;
+	height: 250px;
+	margin-top: 100px;
+	text-align: center;
+	padding: 20px;
+}
+#frame-options-steps {
+	border: 0px solid black;
+	width: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+
+.global-options-container {
+	width: 550px;
+	height: 330px;
+	margin-top: 50px;
+	text-align: center;
+	padding: 20px;
+}
+#global-options-fr {
+	border: 0px solid black;
+	width: 50px;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+#global-options-steps {
+	border: 0px solid black;
+	width: 50px;
+	font-size: 20px;
+	text-align: center;
+}
+#global-options-ghosts {
+	border: 0px solid black;
+	width: 50px;
+	font-size: 20px;
+	text-align: center;
+}
+#global-options-node-size {
+	border: 0px solid black;
+	width: 50px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.open-options-container {
+	width: 200px;
+	height: 250px;
+	margin-top: 100px;
+	text-align: center;
+	padding: 20px;
+}
+.open-options-button {
+	border: 1px solid black;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	width: 100px;
+	background: #8cf;
+}
+
+
+
+.save-options-container {
+	width: 300px;
+	height: 250px;
+	margin-top: 100px;
+	text-align: center;
+	padding: 20px;
+}
+#save-options-filename {
+	border: 0px solid black;
+	border-bottom: 1px solid #ccc;
+	outline-width: 0;
+}
+.save-options-button {
+	height: 28px;
+	padding: 2px;
+}
+.save-options-button img {
+	height: 24px;
+}
+.save-button-active {
+	-webkit-box-shadow: 0px 0px 5px 3px #cc0;
+}
+
+
+
+.server-filelist-container {
+	width: 200px;
+	height: 250px;
+	margin-top: 100px;
+	text-align: center;
+	padding: 20px;
+}
+.filelist-div{
+	overflow: auto;
+	height: 120px;
+}
+div ::-webkit-scrollbar {
+	width: 20px;
+}
+
+div ::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.filelist-table {
+	width: 100%;
+}
+.filelist-name {
+	border-bottom: 1px solid #ccc !important;
+	text-align: left;
+}
+.filelist-name-click {
+	background: #A9DF00;
+}
+
+.form-delete {
+	position: absolute;
+	bottom: 20px;
+	left: 95px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.help-container {
+	width: 625px;
+	height: 450px;
+	margin-top: 10px;
+	text-align: center;
+	padding: 20px;
+	font-family: arial;
+}
+.help-table {
+	width: 565px;
+}
+.help-back {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+.help-forward {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+.help-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.help-home {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.help-page {
+	position: absolute;
+	bottom: 20px;
+	left: 330px;
+}
+#help-title {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+#help-pre-text {
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+#help-pic-div {
+	float: left;
+	padding: 0px 20px 00px 20px;
+	margin-bottom: -10px;
+}
+#help-pic-div > img{
+	padding-bottom: 10px;
+	height: 250px;
+}
+#help-post-text {
+	font-size: 12px;
+	text-align: justify;
+	padding: 7px 20px 0px 20px;
+}
+.help-toc {
+	cursor: pointer;
+}
+.help-toc:hover {
+	color: #7373FF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
